@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="elevation_header">4dp</dimen>
+    <dimen name="spacing">16dp</dimen>
+
+    <integer name="anim_duration_long">500</integer>
+    <integer name="anim_duration_medium">300</integer>
+    <integer name="anim_duration_fast">50</integer>
+    <integer name="anim_duration_startDelay">100</integer>
+    <integer name="anim_duration_slide">700</integer>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="reveal1Sample"
+            type="com.example.valerysmith.animationtransition.Contacts" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="?android:colorPrimary"
+            android:elevation="@dimen/elevation_header"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </android.support.v7.widget.Toolbar>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                android:id="@+id/titleView"
+                android:background="@{reveal1Sample.color}" />
+
+            <ImageView
+                android:id="@+id/shared_target"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/circle"
+                android:layout_centerInParent="true"
+                android:transitionName="@string/transition_reveal1"
+                app:colorTint="@{reveal1Sample.color}" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/titleView"
+                android:layout_marginStart="80dp"
+                android:layout_marginBottom="15dp"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:text="@{reveal1Sample.name}"
+                android:transitionName="@string/transition_text"
+                tools:text="Title" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/reveal_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                style="@style/AppTheme.Translate"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="@dimen/spacing"
+                android:src="@drawable/ic_call_black_24dp"
+                android:id="@+id/phoneView" />
+
+            <TextView
+                style="@style/AppTheme.Translate"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/phoneView"
+                android:layout_toEndOf="@+id/phoneView"
+                android:text="Phone"
+                android:id="@+id/phoneText" />
+
+            <ImageView
+                style="@style/AppTheme.Translate"
+                android:id="@+id/emailView"
+                android:src="@drawable/ic_email_black_24dp"
+                android:layout_margin="@dimen/spacing"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/phoneView"/>
+
+            <TextView
+                style="@style/AppTheme.Translate"
+                android:id="@+id/emailText"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/phoneText"
+                android:layout_alignTop="@+id/emailView"
+                android:layout_marginTop="11dp"
+                android:text="Email" />
+
+            <ImageView
+                style="@style/AppTheme.Translate"
+                android:id="@+id/locationView"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_location_on_black_24dp"
+                android:layout_below="@+id/emailView"
+                android:layout_margin="@dimen/spacing"/>
+
+            <TextView
+                style="@style/AppTheme.Translate"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/emailText"
+                android:layout_alignTop="@+id/locationView"
+                android:layout_marginTop="11dp"
+                android:text="Location" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
